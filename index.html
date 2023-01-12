@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"href="style.css">
+    </head>
+    <body>
+        <form>
+            <input type="text" id="log" required>
+            <label for log1>Ввести логин</label>
+            <div></div>
+            <input type="password" id="password1" required>
+            <label for password1>Ввести пароль</label>
+            <div></div>
+            <input type="password" id="password2" required>
+            <label for password2>Повторить пароль</label>
+            <div></div>
+            <input type="submit" id="btn">
+        </form>
+        <script>
+            var btn=document.getElementById('btn')
+            var login=document.getElementById('log')
+            var pass=document.getElementById('password1').value
+            var passd=document.getElementById('password2').value
+            btn.addEventListener('click',function(){
+                var str=login.value
+                for(let i=0;i<str.length;i++){
+                    if(passd==pass && str.length>=3 && pass.length>=6 && str[i].charCodeAt(0)<=65 && str[i].charCodeAt(0)>=90){
+                        continue
+                    }
+                    else{
+                        alert("Исправьте данные")
+                        break
+                    }
+                }
+                alert("OK")
+            })
+        </script>
+    </body>
+</html>
